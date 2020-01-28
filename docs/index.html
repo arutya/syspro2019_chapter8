@@ -10,31 +10,39 @@
         <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
     </head>
     <body>
-        <h1>ã‚·ã‚¹ãƒ†ãƒ ãƒ—ãƒ­ã‚°ãƒ©ãƒŸãƒ³ã‚°</h1>
+        <h1>ƒVƒXƒeƒ€ƒvƒƒOƒ‰ƒ~ƒ“ƒO</h1>
         
         <div>
             <div class="line__container">
                 <ul id="messages"></ul>
             </div>
-            <button id="led-on">å…¥å®¤ã—ã¾ã—ãŸ</button>
-            <button id="led-off">é€€å®¤ã—ã¾ã—ãŸ</button>
-            <a href="./temp.html">æ¸©åº¦æƒ…å ±</a>
+            <button id="led-on">“üŽº‚µ‚Ü‚µ‚½</button>
+            <button id="led-off">‘ÞŽº‚µ‚Ü‚µ‚½</button>
+            <a href="./temp.html">‰·“xî•ñ</a>
         </div>
         <script>
-            // TODO0 ã“ã“ã«è¨­å®šæƒ…å ±ã‚’è²¼ã‚Šä»˜ã‘ã‚‹  
-            
-            // ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®å‚ç…§ã‚’æº–å‚™
+            // TODO0 ‚±‚±‚ÉÝ’èî•ñ‚ð“\‚è•t‚¯‚é  
+				
+		firebase.initializeApp(firebaseConfig);
+
+            // ƒf[ƒ^ƒx[ƒX‚ÌŽQÆ‚ð€”õ
             var ledRef = firebase.firestore().collection('led')
         
-            // TODO1 é€ä¿¡ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸæ™‚ã®å‡¦ç†
+            // TODO1 ‘—Mƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½Žž‚Ìˆ—
             
             $('#led-on').click(function() {
-		    // {led: "ON"}ã‚’é€ä¿¡
+		// {led: "ON"}‚ð‘—M
+		ledRef.add({led: "ON"});
             });
             $('#led-off').click(function() {
-		    // {led: "OFF"}ã‚’é€ä¿¡
+		// {led: "OFF"}‚ð‘—M
+		ledRef.add({led: "OFF"});
             });
+
+
+
 
         </script>
     </body>
 </html>
+
